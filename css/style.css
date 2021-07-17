@@ -1,0 +1,159 @@
+/* fonts family  */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+/* common utilities  */
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    color:#fff;
+    padding:1rem ;
+}
+
+/* keyframes start   */
+@keyframes moveToRight {
+    0%{
+        transform: translateX(-50%);
+        opacity:0;
+    }
+    75%{
+        transform: translateX(2%);
+        opacity:.9;
+    }
+    100%{
+        transform: translateX(0);
+        opacity:1;
+    }
+}
+@keyframes moveToLeft {
+    0%{
+        transform: translateX(50%);
+        opacity: 0;
+    }
+    75%{
+        transform: translateX(-2%);
+        opacity: .9;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes moveFromBottom {
+    0%{
+        transform: translateY(50%);
+        opacity: 0;
+    }
+    75%{
+        transform: translateY(-5%);
+        opacity: .8;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* keyframes end  */
+
+/* header start  */
+.header{
+    width: 97vw;
+    height: 97vh;
+   background-image:linear-gradient(to right bottom,lightgreen,green), url(../img/hero.jpg);
+   background-size: cover;
+   background-position: center;
+   background-blend-mode: soft-light;
+   clip-path: polygon(0 0, 100% 0,100% 85%,0 100%);
+   margin:auto;
+}
+.header__logo{
+    position: absolute;
+    top:4rem;
+    left:4rem;
+    width: 10vw;
+    
+}
+.header__logo img{
+    width: 5rem;
+    height: 4rem;
+}
+.header__content{
+    height: 100%;
+    width: 100%;
+    color:#fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header__title{
+    font-size: 9rem;
+    font-weight: 400;
+    letter-spacing: 2.5rem;
+    text-transform: uppercase;
+    animation: moveToRight 1s linear ;
+}
+.header__text{
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.5rem;
+    margin:2rem 0 5rem ;
+    animation: moveToLeft 1s linear    ;
+}
+.btn-white:link,
+.btn-white:visited{
+    color:#777;
+    font-size: 2rem;
+    display: inline-block;
+    text-transform: uppercase;
+    margin-top: 3rem;
+    padding:2rem 4rem;
+    background-color:#fff;
+    border-radius: 10rem;
+    position: relative;
+    transition:all .2s;
+    animation: moveFromBottom 1s linear  .75s  ;
+    animation-fill-mode: backwards;
+}
+.btn-white::after{
+    content:'';
+
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 100px;
+    z-index: -1;
+    transition: all .4s;
+}
+.btn-white:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.6);
+}
+.btn-white:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+.btn-white:active{
+    transform:translateY(2px);
+    box-shadow: 0 .5rem 5rem rgba(0,0,0,0.1);
+}
+/* header end  */
