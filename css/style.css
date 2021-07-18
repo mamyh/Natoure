@@ -21,8 +21,28 @@ html{
 body{
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
-    color:#fff;
     padding:1rem ;
+}
+.text-center{
+    text-align: center;
+}
+
+.title{
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 5rem;
+    letter-spacing:.2rem;
+    display: inline-block;
+    text-transform: uppercase;
+    background-image: linear-gradient(to right bottom , lightgreen,green);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color:transparent;
+    transition:all .4s linear;
+}
+.title:hover{
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.6);
 }
 
 /* keyframes start   */
@@ -157,3 +177,96 @@ body{
     box-shadow: 0 .5rem 5rem rgba(0,0,0,0.1);
 }
 /* header end  */
+/* about section start  */ 
+.about{
+    background-color: #eee;
+    padding:20rem 0;
+    margin-top: -12rem;
+}
+.about__content{
+    display: flex;
+    justify-content: space-evenly;
+    margin:5rem 0;
+}
+.about__text{
+    width:40%
+}
+.about__first{
+   font-size: 1.5rem;
+   line-height: 2.6rem;
+   color:#777;
+}
+.about__first:not(:last-child){
+    margin-bottom:3rem;
+}
+.about__title{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+.about__para{
+    font-size: inherit;
+    text-align: justify;
+}
+.about__images{
+    width: 40%;
+   
+}
+
+.btn-green:link,
+.btn-green:visited{
+    display: inline-block;
+    margin: 3rem 0; 
+    font-size: 2rem;
+    color:rgb(58, 233, 58);
+    border-bottom:1px solid currentColor;
+    padding:.5rem 0;
+    transition:all .2s linear;
+}
+.btn-green:hover{
+    color:#fff;
+    border-bottom: none;
+    background-color:rgb(58,233,58);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.4);
+    transform:translateY(-3px);
+}
+.btn-green:active{
+    transform:translateY(0);
+    box-shadow: 0 .5rem 4rem rgba(0, 0, 0, 0.1);
+}
+.images{
+    position:relative;
+}
+.first-image,
+.second-image,
+.third-image{
+    position:absolute;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+    transition:all .2s linear;
+    outline-offset: 2rem;
+}
+.first-image{
+  z-index: 222;
+  top:1rem;
+  left:1rem;
+}
+.second-image{
+   z-index: 333;
+   top:7rem;
+   left:45%;
+}
+.third-image{
+    z-index: 444;
+    top:20rem;
+    left:10%;
+}
+.first-image:hover,
+.second-image:hover,
+.third-image:hover{
+    z-index:999;
+    outline:2rem solid lightgreen;
+    transform:scale(1.1);
+}
+.images:hover .image:not(:hover){
+    transform:scale(.9)
+}
+/* about section end  */
